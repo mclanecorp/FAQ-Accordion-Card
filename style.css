@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Overpass&display=swap");
+
+:root {
+  /*Text*/
+
+  --Verydarkgrayishblue: hsl(237, 12%, 33%);
+  --Darkgrayishblue: hsl(240, 6%, 50%);
+  --Verydarkesaturatedblue: hsl(238, 29%, 16%);
+  --Softred: hsl(14, 88%, 65%);
+
+  /*Dividers*/
+
+  --Lightgrayishblue: hsl(240, 5%, 91%);
+
+  /*Background gradient:*/
+
+  --Softviolet: hsl(273, 75%, 66%);
+  --Softblue: hsl(240, 73%, 65%);
+}
+* {
+  text-decoration: none;
+}
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(var(--Softviolet), var(--Softblue));
+  font-family: Kumbh Sans;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.main {
+}
+
+.container-img {
+  position: relative;
+  top: 30%;
+  right: 30%;
+}
+
+.container-card {
+  background: url(./images/illustration-woman-online-desktop.svg);
+  background-repeat: no-repeat;
+  background-position-x: -80px;
+  background-color: white;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 190px;
+  width: 800px;
+  height: 400px;
+  padding: 30px 70px 0px 0;
+  z-index: 999;
+}
+.container-question {
+  width: 100%;
+  border-bottom: 1px solid var(--Lightgrayishblue);
+  font-size: 0.75em;
+  color: var(--Verydarkgrayishblue);
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.question img {
+  align-self: center;
+}
+.question p {
+  margin-right: 50px;
+}
+.question p:hover {
+  color: var(--Softred);
+}
+.answer {
+  width: 80%;
+  display: none;
+}
+
+.isactive .texte-question {
+  font-weight: bold;
+}
+
+.isactive .answer {
+  display: block;
+  font-weight: 400;
+}
+
+.isactive img {
+  transform: rotate(180deg);
+}
+
+@media screen and (max-width: 380px) {
+  .container-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 600px;
+    padding: 20px;
+
+    background-size: 200px;
+    background-position-x: 60px;
+  }
+  .container-img img {
+    display: none;
+  }
+}
